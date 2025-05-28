@@ -9,7 +9,7 @@ export async function GET() {
   } catch (error) {
     return NextResponse.json(
       { error: "Failed to fetch users" },
-      { status: 500 }
+      { status: 500 },error
     );
   }
 }
@@ -22,7 +22,7 @@ export async function POST(request) {
   } catch (error) {
     return NextResponse.json(
       { error: "Failed to create user" },
-      { status: 500 }
+      { status: 500 },error
     );
   }
 }
