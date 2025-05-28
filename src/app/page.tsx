@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/config/firebase";
+import Image from "next/image";
 
 export default function Home() {
   const router = useRouter();
@@ -32,7 +33,7 @@ export default function Home() {
       <div className="w-full max-w-md bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
         <div className="p-6">
           <div className="flex justify-center mb-6">
-            <img 
+            <Image 
               src="/images/logo.png" 
               alt="100 Days Work Logo" 
               className="h-16"

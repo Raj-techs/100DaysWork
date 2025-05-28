@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useUsers } from "@/hooks/useUsers";
+import Image from 'next/image';
 
 export default function AddUserPage() {
   const { addUser } = useUsers();
@@ -151,9 +152,11 @@ export default function AddUserPage() {
           {/* Image preview */}
           {previewImage && (
             <div className="mb-4">
-              <img 
+              <Image 
                 src={previewImage} 
                 alt="Preview" 
+                width={128}
+                height={128}
                 className="w-32 h-32 object-cover rounded-full mx-auto"
               />
             </div>

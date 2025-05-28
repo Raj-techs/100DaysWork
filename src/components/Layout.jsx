@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import Header from './Header';
 import ThemeToggle from './ThemeToggle';
 import logo from '../assets/logo.png';
+import Image from 'next/image';
 
 const Layout = ({ children }) => {
   const [darkMode, setDarkMode] = useState(false);
@@ -18,7 +19,7 @@ const Layout = ({ children }) => {
       <div className="container mx-auto px-4 py-2">
         {/* Logo */}
         <div className="flex justify-center py-2">
-          <img src={logo} alt="100 Days Work Logo" className="h-12" />
+          <Image src={logo} alt="100 Days Work Logo" width={48} height={48} className="h-12" />
         </div>
 
         {/* Header */}

@@ -1,15 +1,19 @@
 // components/UserCard.jsx
 "use client";
 
+import Image from "next/image";
+
 export default function UserCard({ user, onAttendanceChange, isChecked }) {
   return (
     <div className="flex items-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow">
       <div className="flex-shrink-0 mr-4">
         {user.image ? (
-          <img 
+          <Image 
             src={user.image} 
             alt={`${user.firstName} ${user.secondName}`}
             className="h-12 w-12 rounded-full"
+            width={48}
+            height={48}
           />
         ) : (
           <div className="h-12 w-12 rounded-full bg-gray-300 dark:bg-gray-600 flex items-center justify-center">
