@@ -199,24 +199,24 @@ export default function ReportsPage() {
         </div>
 
         {/* Report Summary */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-          <div className="bg-green-100 dark:bg-green-900 p-4 rounded-lg">
-            <h4 className="font-bold">Total Present</h4>
-            <p className="text-2xl">{filteredUsers.length}</p>
-          </div>
-          <div className="bg-red-100 dark:bg-red-900 p-4 rounded-lg">
-            <h4 className="font-bold">Total Absent</h4>
-            <p className="text-2xl">{users.length - filteredUsers.length}</p>
-          </div>
-          <div className="bg-blue-100 dark:bg-blue-900 p-4 rounded-lg">
-            <h4 className="font-bold">Males Present</h4>
-            <p className="text-2xl">{filteredUsers.filter(u => u.gender === "Male").length}</p>
-          </div>
-          <div className="bg-purple-100 dark:bg-purple-900 p-4 rounded-lg">
-            <h4 className="font-bold">Females Present</h4>
-            <p className="text-2xl">{filteredUsers.filter(u => u.gender === "Female").length}</p>
-          </div>
-        </div>
+       <div className="flex flex-wrap gap-4 mb-6">
+  <div className="flex-1 min-w-[150px] bg-green-100 dark:bg-green-900 p-4 rounded-lg">
+    <h4 className="font-bold">Total Present</h4>
+    <p className="text-2xl">{filteredUsers.length}</p>
+  </div>
+  <div className="flex-1 min-w-[150px] bg-red-100 dark:bg-red-900 p-4 rounded-lg">
+    <h4 className="font-bold">Total Absent</h4>
+    <p className="text-2xl">{users.length - filteredUsers.length}</p>
+  </div>
+  <div className="flex-1 min-w-[150px] bg-blue-100 dark:bg-blue-900 p-4 rounded-lg">
+    <h4 className="font-bold">Males Present</h4>
+    <p className="text-2xl">{filteredUsers.filter(u => u.gender === "Male").length}</p>
+  </div>
+  <div className="flex-1 min-w-[150px] bg-purple-100 dark:bg-purple-900 p-4 rounded-lg">
+    <h4 className="font-bold">Females Present</h4>
+    <p className="text-2xl">{filteredUsers.filter(u => u.gender === "Female").length}</p>
+  </div>
+</div>
 
         {/* Report Table */}
         <div className="overflow-x-auto mb-6">

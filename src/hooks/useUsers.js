@@ -96,9 +96,9 @@ export function useUsers() {
       const userRef = doc(db, "users", userId);
       await updateDoc(userRef, data);
       return true;
-    } catch (err) {
-      console.error("Error updating user:", err);
-      throw err;
+    } catch (error) {
+      console.error("Error updating user:", error);
+      throw error;
     }
   };
 
@@ -140,8 +140,8 @@ export function useUsers() {
           ...doc.data()
         }));
         setUsers(usersData);
-      } catch (err) {
-        setError(err.message);
+      } catch (error) {
+        setError(error.message);
       } finally {
         setLoading(false);
       }
@@ -172,9 +172,9 @@ export function useUsers() {
       setUsers(prevUsers => [...prevUsers, { id: docRef.id, ...newUser }]);
       
       return docRef.id; // Return the new user ID
-    } catch (err) {
-      console.error("Error adding user:", err);
-      throw err;
+    } catch (error) {
+      console.error("Error adding user:", error);
+      throw error;
     }
   };
 
