@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import "../../styles/globals.css";
+import Image from "next/image";
 
 export const metadata = {
   title: "100 Days Work",
@@ -12,10 +13,12 @@ export default function DashboardLayout({ children }) {
       <body className="bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
         <div className="min-h-screen">
           <div className="flex justify-center py-4">
-            <img 
+            <Image 
               src="/images/logo.png" 
               alt="100 Days Work Logo" 
               className="h-12"
+              height={48}
+              width={48}
             />
           </div>
           <Header />
