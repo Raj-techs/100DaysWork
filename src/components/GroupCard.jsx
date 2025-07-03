@@ -17,6 +17,7 @@ export default function GroupCard({ group, onPairClick = null }) {
               alt={user.firstName}
               className="w-10 h-10 rounded-full mr-2"
               width={40}
+              height={40}
             />
             <Link href={`/dashboard/user-history?id=${user.id}`}>
               <span className="hover:underline">

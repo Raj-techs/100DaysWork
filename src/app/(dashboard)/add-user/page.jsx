@@ -147,7 +147,6 @@ export default function AddUserPage() {
         </div>
         
         <div className="mb-6">
-          <label className="block mb-2">User Image</label>
           
           {/* Image preview */}
           {previewImage && (
@@ -161,13 +160,7 @@ export default function AddUserPage() {
               />
             </div>
           )}
-          
-          <input
-            type="file"
-            accept="image/*"
-            onChange={handleImageChange}
-            className="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600"
-          />
+       
         </div>
         
         <button

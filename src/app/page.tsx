@@ -37,6 +37,8 @@ export default function Home() {
               src="/images/logo.png" 
               alt="100 Days Work Logo" 
               className="h-16"
+              width={64}
+              height={64}
             />
           </div>
           
