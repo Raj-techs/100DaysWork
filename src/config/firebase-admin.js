@@ -1,12 +1,22 @@
-import { cert, initializeApp as initializeAdminApp } from "firebase-admin/app";
-import { getFirestore as getAdminFirestore } from "firebase-admin/firestore";
+import { cert, initializeApp, getApps } from "firebase-admin/app";
+import { getFirestore } from "firebase-admin/firestore";
 
-const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_KEY);
+let db = null;
 
-if (!initializeAdminApp().apps.length) {
-  initializeAdminApp({
-    credential: cert(serviceAccount)
+if (!getApps().length) {
+  const serviceAccountStr = process.env.FIREBASE_SERVICE_ACCOUNT_KEY;
+
+  if (!serviceAccountStr) {
+    throw new Error("Missing FIREBASE_SERVICE_ACCOUNT_KEY environment variable");
+  }
+
+  const serviceAccount = JSON.parse(serviceAccountStr);
+
+  initializeApp({
+    credential: cert(serviceAccount),
   });
 }
 
-export const db = getAdminFirestore();
+db = getFirestore();
+
+export { db };
